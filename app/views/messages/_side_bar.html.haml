@@ -4,7 +4,7 @@
       .LeftHeader__box__username
         = current_user.name
       .LeftHeader__box__icon
-        = link_to '#' , class: "LeftHeader__box__icon__new-group" do
+        = link_to new_group_path do
           =icon('fas','edit')
         = link_to edit_user_path(current_user) do
           =icon('fas','cog')
