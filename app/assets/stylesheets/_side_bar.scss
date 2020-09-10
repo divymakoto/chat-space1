@@ -40,13 +40,12 @@
   }
 
   .GroupList {
-
-    .Group{
     background-color: #2f3e51;
-    height: calc(100vh - 500px);
+    height: calc(100vh - 100px);
     color: #ffffff ;
     font-weight: bold;
-    }
+
+    .Group{
 
       &__name{
       font-size: 15px;
@@ -57,5 +56,6 @@
       font-size: 11px;
       margin: 0 20px 40px 20px;
       }
+    }
   }
 }
