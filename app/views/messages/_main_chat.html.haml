@@ -34,9 +34,10 @@
       おはよう！
 
   .MainChat__form
-    %form.MainChat__form__box
-      %input{ type: "text", class: "MainChat__form__box__input-text", placeholder: "type a message"}
-      %label{ class: "MainChat__form__box__input-image"}
-        =icon('fas', 'image',)
-        %input{ type: "file", class: "MainChat__form__box__input-image__file"}
-    %input{ type: "submit", class: "MainChat__form__submit-btn", value: "Send"}
+    = form_with model: [@group, @message], html: {class: "MainChat__form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :body, class: 'MainChat__form__box__input-text', placeholder: 'type a message'
+        = f.label :image, class: 'MainChat__form__box__input-image' do
+          = icon('far', 'image', class: 'MainChat__form__icon')
+          = f.file_field :image, class: 'MainChat__form__box__input-image__file'
+      = f.submit 'Send', class: 'MainChat__form__submit-btn'

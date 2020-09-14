@@ -47,7 +47,7 @@ a{
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
     padding: 35px 40px;
-    
+
     &__upper-info{
       display: flex;
       justify-content: left;
@@ -87,7 +87,7 @@ a{
       padding: 10px 10px 10px 50px;
       width: 100%;
       height: calc(100vh-20px);
-    
+
 
       &__input-text{
         height: 60px;
@@ -96,12 +96,16 @@ a{
 
       }
 
+      &__icon{
+
+      }
+
       &__input-image{
         position: absolute;
         right: 25px;
         bottom: 20px;
         font-size: 1.5em;
-        
+
 
         &__file{
           display: none;
@@ -116,7 +120,7 @@ a{
       margin: 40px 40px 40px 15px;
       background-color: #38aef0;
       color: white;
-      
+
     }
 
   }
