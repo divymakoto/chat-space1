@@ -9,33 +9,11 @@
       = link_to 'Edit' , '#'
 
   .MainChat__message
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:00
-    .MainChat__message__text
-      おはよう！
-
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:16
-    .MainChat__message__text
-      おはよう！
-
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:37
-    .MainChat__message__text
-      おはよう！
+    = render @messages
 
   .MainChat__form
     = form_with model: [@group, @message], html: {class: "MainChat__form"}, local: true do |f|
-      .Form__contents
+      .MainChat__form__box
         = f.text_field :body, class: 'MainChat__form__box__input-text', placeholder: 'type a message'
         = f.label :image, class: 'MainChat__form__box__input-image' do
           = icon('far', 'image', class: 'MainChat__form__icon')
