@@ -16,6 +16,6 @@
       .MainChat__form__box
         = f.text_field :body, class: 'MainChat__form__box__input-text', placeholder: 'type a message'
         = f.label :image, class: 'MainChat__form__box__input-image' do
-          = icon('far', 'image', class: 'MainChat__form__icon')
+          = icon('far', 'image', class: 'MainChat__form__box__icon')
           = f.file_field :image, class: 'MainChat__form__box__input-image__file'
       = f.submit 'Send', class: 'MainChat__form__submit-btn'
