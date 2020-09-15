@@ -2,9 +2,11 @@
   .MainChat__group-info
     .MainChat__group-info__left
       .MainChat__group-info__left__group-name
-        test
+        =@group.name
       .MainChat__group-info__left__menber-name
-        Member:makoto
+        Menber :
+        - @group.users.each do |user|
+          =user.name
     .MainChat__group-info__right
       = link_to 'Edit' , '#'
 
