@@ -8,7 +8,7 @@
         - @group.users.each do |user|
           =user.name
     .MainChat__group-info__right
-      = link_to 'Edit' , '#'
+      = link_to 'Edit' , edit_group_path(@group)
 
   .MainChat__message
     = render @messages
