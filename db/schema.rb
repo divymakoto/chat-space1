@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(version: 2020_09_10_105415) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "body", null: false
+    t.string "content"
     t.string "image"
     t.bigint "group_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["body"], name: "index_messages_on_body", unique: true
     t.index ["group_id"], name: "index_messages_on_group_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
