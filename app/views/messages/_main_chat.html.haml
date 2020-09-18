@@ -2,41 +2,22 @@
   .MainChat__group-info
     .MainChat__group-info__left
       .MainChat__group-info__left__group-name
-        test
+        =@group.name
       .MainChat__group-info__left__menber-name
-        Member:makoto
+        Menber :
+        - @group.users.each do |user|
+          =user.name
     .MainChat__group-info__right
-      = link_to 'Edit' , '#'
+      = link_to 'Edit' , edit_group_path(@group)
 
-  .MainChat__message
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:00
-    .MainChat__message__text
-      おはよう！
-
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:16
-    .MainChat__message__text
-      おはよう！
-
-    .MainChat__message__upper-info
-      .MainChat__message__upper-info__talker
-        makoto
-      .MainChat__message__upper-info__date
-        2020/03/28 (sat)18:37
-    .MainChat__message__text
-      おはよう！
+  .MainChat__messages
+    = render @messages
 
   .MainChat__form
-    %form.MainChat__form__box
-      %input{ type: "text", class: "MainChat__form__box__input-text", placeholder: "type a message"}
-      %label{ class: "MainChat__form__box__input-image"}
-        =icon('fas', 'image',)
-        %input{ type: "file", class: "MainChat__form__box__input-image__file"}
-    %input{ type: "submit", class: "MainChat__form__submit-btn", value: "Send"}
+    = form_with model: [@group, @message], html: {class: "MainChat__form"}, local: true do |f|
+      .MainChat__form__box
+        = f.text_field :content, class: 'MainChat__form__box__input-text', placeholder: 'type a message'
+        = f.label :image, class: 'MainChat__form__box__input-image' do
+          = icon('far', 'image', class: 'MainChat__form__box__icon')
+          = f.file_field :image, class: 'MainChat__form__box__input-image__file'
+      = f.submit 'Send', class: 'MainChat__form__submit-btn'
